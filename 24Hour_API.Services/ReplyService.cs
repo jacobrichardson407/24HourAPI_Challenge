@@ -30,6 +30,7 @@ namespace _24Hour_API.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+<<<<<<< HEAD
         //Get reply by comment id
         public IEnumerable<ReplyListItem> GetReplyByCommentId(int id)
         {
@@ -47,6 +48,25 @@ namespace _24Hour_API.Services
                         }
                         );
                 return entity.ToArray();
+=======
+        // Get reply by comment id
+        public IEnumerable<CommentListItem> GetCommentsByPostId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Comments.Where(e => e.PostId == id && e.AuthorId == _authorId)
+                    .Select(
+                        e =>
+                        new CommentListItem
+                        {
+                            CommentId = e.CommentId,
+                            Text = e.Text
+                        }
+                        );
+                return query.ToArray();
+>>>>>>> a72c1098c3df45f5706a25666688c216359e845d
             }
 
         }
