@@ -32,6 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,9 +46,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommentCreate.cs" />
+    <Compile Include="CommentDetail.cs" />
     <Compile Include="PostCreate.cs" />
+    <Compile Include="PostDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReplyCreate.cs" />
+    <Compile Include="ReplyDetail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\24Hour_API.Data\24Hour_API.Data.csproj">
+      <Project>{1050F2CE-B117-4DAA-A284-8AB42DDB0CF1}</Project>
+      <Name>24Hour_API.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
