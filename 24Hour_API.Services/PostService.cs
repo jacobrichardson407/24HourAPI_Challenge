@@ -1,6 +1,6 @@
 ﻿using _24Hour_API.Data;
 using _24Hour_API.Models;
-using _24Hour_API.WebAPI.Models;
+using _24Hour_API.WebAPI.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +12,16 @@ namespace _24Hour_API.Services
     public class PostService
     {
         private readonly Guid _authorId;
-        public PostService(Guid AuthorId)
+        public PostService(Guid authorId)
         {
-            _authorId = AuthorId;
+            _authorId = authorId;
         }
         // POST(Create a Post)
         public bool CreatePost(PostCreate model)
         {
             var entity = new Post()
             {
+                AuthorId = _authorId,
                 PostId = model.PostId,
                 Title = model.Title,
                 Text = model.Text
@@ -44,7 +45,8 @@ namespace _24Hour_API.Services
                         new PostListItem
                         {
                             PostId = e.PostId,
-                            Title = e.Title
+                            Title = e.Title,
+                            Text = e.Text
                         }
                         );
                 return query.ToArray();

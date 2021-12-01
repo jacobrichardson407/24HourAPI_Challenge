@@ -16,6 +16,5 @@ C:\Users\desig\Desktop\ElevenFiftyProjects\113SD\Blue Badge\24Hour_API\24Hour_AP
 C:\Users\desig\Desktop\ElevenFiftyProjects\113SD\Blue Badge\24Hour_API\24Hour_API.WebAPI\24Hour_API.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\desig\Desktop\ElevenFiftyProjects\113SD\Blue Badge\24Hour_API\24Hour_API.WebAPI\24Hour_API.Services\obj\Debug\24Hour_API.Services.csproj.AssemblyReference.cache
 C:\Users\desig\Desktop\ElevenFiftyProjects\113SD\Blue Badge\24Hour_API\24Hour_API.WebAPI\24Hour_API.Services\obj\Debug\24Hour_API.Services.csproj.CoreCompileInputs.cache
-C:\Users\desig\Desktop\ElevenFiftyProjects\113SD\Blue Badge\24Hour_API\24Hour_API.WebAPI\24Hour_API.Services\obj\Debug\24Hour_API.Services.csproj.CopyComplete
 C:\Users\desig\Desktop\ElevenFiftyProjects\113SD\Blue Badge\24Hour_API\24Hour_API.WebAPI\24Hour_API.Services\obj\Debug\24Hour_API.Services.dll
 C:\Users\desig\Desktop\ElevenFiftyProjects\113SD\Blue Badge\24Hour_API\24Hour_API.WebAPI\24Hour_API.Services\obj\Debug\24Hour_API.Services.pdb

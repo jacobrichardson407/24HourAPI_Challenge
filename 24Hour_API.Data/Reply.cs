@@ -10,9 +10,10 @@ namespace _24Hour_API.Data
 {
     public class Reply
     {
+        [Key]
         public int ReplyId { get; set; }
         public string Text { get; set; }
-        [ForeignKey("CommentId")]
+        [ForeignKey("Comment")]
         public int CommentId { get; set; }
         public virtual Comment Comment { get; set; }
         public Guid AuthorId { get; set; }

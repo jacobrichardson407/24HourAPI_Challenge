@@ -1,4 +1,7 @@
-﻿using System;
+﻿using _24Hour_API.Models;
+using _24Hour_API.Services;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,31 +13,31 @@ namespace _24Hour_API.WebAPI.Controllers
     [Authorize]
     public class ReplyController : ApiController
     {
-        //public IHttpActionResult Get()
-        //{
-        //    PostService postService = CreatePostService();
-        //    var posts = postService.GetPosts();
-        //    return Ok(posts);
-        //}
-        //public IHttpActionResult Post(PostCreate post)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //    var service = CreatePostService();
+        public IHttpActionResult Get(int id)
+        {
+            ReplyService replyService = CreateReplyService();
+            var posts = replyService.GetReplyByCommentId(id);
+            return Ok(posts);
+        }
+        public IHttpActionResult Post(ReplyCreate reply)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var service = CreateReplyService();
 
-        //    if (!service.CreatePost(post))
-        //    {
-        //        return InternalServerError();
-        //    }
-        //    return Ok();
-        //}
-        //private PostService CreatePostService()
-        //{
-        //    var authorId = Guid.Parse(User.Identity.GetUserId());
-        //    var postService = new PostService(authorId);
-        //    return postService;
-        //}
+            if (!service.CreateReply(reply))
+            {
+                return InternalServerError();
+            }
+            return Ok();
+        }
+        private ReplyService CreateReplyService()
+        {
+            var authorId = Guid.Parse(User.Identity.GetUserId());
+            var replyService = new ReplyService(authorId);
+            return replyService;
+        }
     }
 }
