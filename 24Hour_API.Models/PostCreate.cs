@@ -14,6 +14,7 @@ namespace _24Hour_API.Models
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         public string Title { get; set; }
         [MaxLength(8000)]
-        public string Content { get; set; }
+        public string Text { get; set; }
+        public int PostId { get; set; }
     }
 }
