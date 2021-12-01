@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using _24Hour_API.Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
 
 namespace _24Hour_API.WebAPI.Models
 {
@@ -34,6 +33,8 @@ namespace _24Hour_API.WebAPI.Models
             return new ApplicationDbContext();
         }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Reply> Replies { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

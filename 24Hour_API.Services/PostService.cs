@@ -27,24 +27,31 @@ namespace _24Hour_API.Services
             };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Post.Add(entity);
+                ctx.Posts.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
         // GET ALL Posts
-        public IEnumerable<CommentListItem> GetComments()
+        public IEnumerable<PostListItem> GetPosts()
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx
-
+                var query =
+                    ctx
+                    .Posts.Where(e => e.AuthorId == _authorId)
+                    .Select(
+                        e =>
+                        new PostListItem
+                        {
+                            PostId = e.PostId,
+                            Title = e.Title
+                        }
+                        );
+                return query.ToArray();
             }
+
+
+
         }
-        // POST (Create a Comment on a Post using a Foreign Key relationship)
-        // GET Comments By Post Id
-        // POST(Create) a Reply to a Comment using a Foreign Key relationship
-        // GET Replies By Comment Id
-
-
     }
 }
