@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,8 @@ namespace _24Hour_API.Data
 {
     public class Reply
     {
-        public int ReplyID { get; set; }
+        public int ReplyId { get; set; }
+        public string Text { get; set; }
         [ForeignKey("CommentId")]
         public int CommentId { get; set; }
         public virtual Comment Comment { get; set; }
