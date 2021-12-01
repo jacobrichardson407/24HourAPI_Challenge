@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using _24Hour_API.WebAPI.Models;
 using _24Hour_API.WebAPI.Providers;
 using _24Hour_API.WebAPI.Results;
+using _24Hour_API.WebAPI.Data;
 
 namespace _24Hour_API.WebAPI.Controllers
 {

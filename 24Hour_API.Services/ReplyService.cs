@@ -1,6 +1,6 @@
 ﻿using _24Hour_API.Data;
 using _24Hour_API.Models;
-using _24Hour_API.WebAPI.Models;
+using _24Hour_API.WebAPI.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
