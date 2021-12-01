@@ -16,7 +16,11 @@ namespace _24Hour_API.WebAPI.Controllers
         public IHttpActionResult Get(int id)
         {
             ReplyService replyService = CreateReplyService();
+<<<<<<< HEAD
             var posts = replyService.GetReplyByCommentId(id);
+=======
+           var posts = replyService.GetReplyByCommentId(id);
+>>>>>>> d7cbfb920a8b6bdb73b45cadc67fefa331e46d06
             return Ok(posts);
         }
         public IHttpActionResult Post(ReplyCreate reply)

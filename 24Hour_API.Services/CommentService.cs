@@ -30,6 +30,10 @@ namespace _24Hour_API.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+<<<<<<< HEAD
+=======
+        //Get comment by post id
+>>>>>>> d7cbfb920a8b6bdb73b45cadc67fefa331e46d06
         public IEnumerable<CommentListItem> GetCommentsByPostId(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -47,7 +51,10 @@ namespace _24Hour_API.Services
                         );
                 return entity.ToArray();
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d7cbfb920a8b6bdb73b45cadc67fefa331e46d06
         }
     }
 }
