@@ -30,25 +30,25 @@ namespace _24Hour_API.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        // Get reply by comment id
-        //public IEnumerable<CommentListItem> GetCommentsByPostId()
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var query =
-        //            ctx
-        //            .Comments.Where(e => e.AuthorId == _authorId)
-        //            .Select(
-        //                e =>
-        //                new CommentListItem
-        //                {
-        //                    PostId = e.PostId,
-        //                    Title = e.Title
-        //                }
-        //                );
-        //        return query.ToArray();
-        //    }
+        //Get reply by comment id
+        public IEnumerable<ReplyListItem> GetReplyByCommentId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Replies.Where(e => e.CommentId == id && e.AuthorId == _authorId)
+                    .Select(
+                        e =>
+                        new ReplyListItem
+                        {
+                            ReplyId = e.ReplyId,
+                            Text = e.Text
+                        }
+                        );
+                return entity.ToArray();
+            }
 
-        //}
+        }
     }
 }

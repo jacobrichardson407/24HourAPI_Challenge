@@ -13,12 +13,12 @@ namespace _24Hour_API.WebAPI.Controllers
     [Authorize]
     public class CommentController : ApiController
     {
-        //public IHttpActionResult Get()
-        //{
-        //    CommentService commentService = CreateCommentService();
-        //    var comments = commentService.GetComments();
-        //    return Ok(comments);
-        //}
+        public IHttpActionResult Get(int id)
+        {
+            CommentService commentService = CreateCommentService();
+            var comments = commentService.GetCommentsByPostId(id);
+            return Ok(comments);
+        }
         public IHttpActionResult Post(CommentCreate comment)
         {
             if (!ModelState.IsValid)
