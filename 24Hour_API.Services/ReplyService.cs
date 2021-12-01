@@ -1,6 +1,6 @@
 ﻿using _24Hour_API.Data;
 using _24Hour_API.Models;
-using _24Hour_API.WebAPI.Models;
+using _24Hour_API.WebAPI.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +30,25 @@ namespace _24Hour_API.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+<<<<<<< HEAD
+        //Get reply by comment id
+        public IEnumerable<ReplyListItem> GetReplyByCommentId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Replies.Where(e => e.CommentId == id && e.AuthorId == _authorId)
+                    .Select(
+                        e =>
+                        new ReplyListItem
+                        {
+                            ReplyId = e.ReplyId,
+                            Text = e.Text
+                        }
+                        );
+                return entity.ToArray();
+=======
         // Get reply by comment id
         public IEnumerable<CommentListItem> GetCommentsByPostId(int id)
         {
@@ -47,6 +66,7 @@ namespace _24Hour_API.Services
                         }
                         );
                 return query.ToArray();
+>>>>>>> a72c1098c3df45f5706a25666688c216359e845d
             }
 
         }

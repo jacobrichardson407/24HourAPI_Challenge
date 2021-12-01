@@ -10,6 +10,7 @@ namespace _24Hour_API.Models
     {
         public int CommentId { get; set; }
         public string Text { get; set; }
-        //public
+        public Guid AuthorId { get; set; }
+
     }
 }
