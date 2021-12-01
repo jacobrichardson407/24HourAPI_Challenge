@@ -31,24 +31,24 @@ namespace _24Hour_API.Services
             }
         }
         // Get reply by comment id
-        //public IEnumerable<CommentListItem> GetCommentsByPostId()
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var query =
-        //            ctx
-        //            .Comments.Where(e => e.AuthorId == _authorId)
-        //            .Select(
-        //                e =>
-        //                new CommentListItem
-        //                {
-        //                    PostId = e.PostId,
-        //                    Title = e.Title
-        //                }
-        //                );
-        //        return query.ToArray();
-        //    }
+        public IEnumerable<CommentListItem> GetCommentsByPostId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Comments.Where(e => e.PostId == id && e.AuthorId == _authorId)
+                    .Select(
+                        e =>
+                        new CommentListItem
+                        {
+                            CommentId = e.CommentId,
+                            Text = e.Text
+                        }
+                        );
+                return query.ToArray();
+            }
 
-        //}
+        }
     }
 }
